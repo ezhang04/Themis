@@ -15,11 +15,9 @@
   ],
 
   "action": {
-    "default_popup": "popup.html",
+    "default_popup": "smiley.png",
     "default_icon": {
-      "16": "smiley.png",
-      "48": "smiley.png",
-      "128": "smiley.png"
+      "1000": "smiley.png"
     }
   }
 }
