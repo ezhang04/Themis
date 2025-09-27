@@ -1,0 +1,9 @@
+source,headline,content
+"www.usatoday.com","h1.gnt_ar_hl","p.gnt_ar_b_p"
+"msnbc","h1.headline__text","div.paragraph-elevate p"
+"alternet","h1.post-title","div.post-content p"
+"breitbart","h1.entry-title","div.entry-content p"
+"federalist","h1.entry-title","div.entry-content p"
+"reuters","h1.ArticleHeader_headline","div.ArticleBody_articleBody p"
+"huffpost","h1[data-qa='headline']","div[data-qa='article-content'] p"
+"fox-news","h1.headline","div.article-body p"
