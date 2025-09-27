@@ -5,3 +5,4 @@ source,headline,content
 "www.breitbart.com","h1","p"
 "www.huffpost.com","h1.headline","p"
 "www.foxnews.com",'h1.headline.speakable','p.speakable"
+"theonion.com",'h1.has-link-color.is-style-scale-2.wp-elements-872fcc815281903049e6d7fcd38210f5.wp-block-post-title.has-text-color.has-primary-2-color.has-alpha-font-size.has-rocky-compressed-font-family', 'p.theonion-dingbat'
