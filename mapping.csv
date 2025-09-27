@@ -4,6 +4,5 @@ source,headline,content
 "www.alternet.org","h1.headline.h1","p"
 "www.breitbart.com","h1","p"
 "federalist","h1.entry-title","div.entry-content p"
-"reuters","h1.ArticleHeader_headline","div.ArticleBody_articleBody p"
 "huffpost","h1[data-qa='headline']","div[data-qa='article-content'] p"
 "fox-news","h1.headline","div.article-body p"
