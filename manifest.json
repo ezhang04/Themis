@@ -1,11 +1,27 @@
+
 {
-    "name": "Hello World",
-    "description": "Base Level Extension",
-    "version": "1.0",
-    "manifest_version": 3,
-    "action": {
+  "name": "Hello World",
+  "description": "Base Level Extension",
+  "version": "1.0",
+  "manifest_version": 3,
+
+  "content_scripts": [
+    {
       "matches": ["<all_urls>"],
-      "default_popup": "hello.html"
+      "default_popup": "hello.html",
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "smiley.png",
+      "48": "smiley.png",
+      "128": "smiley.png"
     }
   }
+}
+
   
