@@ -3,6 +3,3 @@ source,headline,content
 "www.msnbc.com","h1.article-hero-headline__htag.lh-none-print.black-print","p.body-graf"
 "www.alternet.org","h1.headline.h1","p"
 "www.breitbart.com","h1","p"
-"federalist","h1.entry-title","div.entry-content p"
-"huffpost","h1[data-qa='headline']","div[data-qa='article-content'] p"
-"fox-news","h1.headline","div.article-body p"
