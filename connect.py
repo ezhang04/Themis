@@ -61,7 +61,7 @@ def predict_from_url(url):
         print(f"Overall Model 1 Bias Scores - Biased: {biased}, Unbiased: {unbiased}")
         print(f"Overall Model 2 Bias Scores - Biased: {biased2}, Unbiased: {unbiased2}")
         print(f"Overall Bias Scores - Avg Bias: {(biased2 + biased) / 2}, Avg Unbiased: {(unbiased2 + unbiased) / 2}")
-        print(f"Overall Bias Scores - Wegihted Bias: {biased2 * .8 + biased * .2}, Avg Unbiased: {unbiased2 *.8 + unbiased *.2}")
+        print(f"Overall Bias Scores - Weighted Bias: {biased2 * .8 + biased * .2}, Avg Unbiased: {unbiased2 *.8 + unbiased *.2}")
         print("-----------------------------------------------------")
 
     else:
