@@ -2,12 +2,16 @@
 <html>
 <head>
   <title>Themis Bias Detector</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <h2>Themis Bias Detector</h2>
-  <input type="text" id="url" placeholder="Enter article URL" size="80">
-  <button onclick="analyze()">Analyze</button>
-  <pre id="output"></pre>
+  <div class="container">
+    <h2>Themis Bias Detector</h2>
+    <input type="text" id="url" placeholder="Enter article URL">
+    <button onclick="analyze()">Analyze</button>
+    <pre id="output"></pre>
+  </div>
 
   <script>
     async function analyze() {
