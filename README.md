@@ -9,7 +9,7 @@ Named after **Themis**, the Greek goddess of justice, fairness, and balance, thi
 - **URL-based Analysis** → Enter a news article URL and receive an automated bias evaluation.  
 - **Bias Breakdown** → Detects linguistic patterns, sentiment, and framing that may indicate bias.  
 - **Weighted Bias Score** → Returns a confidence score classifying articles as *Unbiased*, *Somewhat Biased*, or *Biased*.  
-- **Interactive Frontend** → Clean web interface built with Flask, HTML, CSS, and JavaScript.  
+- **Interactive Frontend** → Clean web interface built with Flask, and HTML/CSS,.  
 
 ---
 
@@ -22,4 +22,9 @@ Named after **Themis**, the Greek goddess of justice, fairness, and balance, thi
 
 ---
 
-## 📂 Project Structure
+## 📂 How To Run
+1. git clone entire repo
+2. in bash terminal: ```source venv/bin/activate```
+3. in bash terminal: ```pip install -r requirements.txt```
+4. in bash terminal: ```python app.py```
+5. in your internet explorer go to http://127.0.0.1:5000
