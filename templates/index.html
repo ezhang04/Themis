@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Themis Bias Detector</title>
+</head>
+<body>
+  <h2>Themis Bias Detector</h2>
+  <input type="text" id="url" placeholder="Enter article URL" size="80">
+  <button onclick="analyze()">Analyze</button>
+  <pre id="output"></pre>
+
+  <script>
+    async function analyze() {
+      const url = document.getElementById("url").value;
+      const response = await fetch("/analyze", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ url })
+      });
+      const data = await response.json();
+      document.getElementById("output").innerText = JSON.stringify(data, null, 2);
+    }
+  </script>
+</body>
+</html>
