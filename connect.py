@@ -46,7 +46,7 @@ def predict_from_url(url):
     biased1, unbiased1 = model1.predict(headline)
     biased2, unbiased2 = model2.predict(headline)
     max_bias_content = headline
-    max_bias = max(biased1, biased2)
+    max_bias = biased2
 
     # Run paragraphs
     for paragraph in content:
@@ -58,7 +58,7 @@ def predict_from_url(url):
         p_biased2, p_unbiased2 = model2.predict(paragraph)
         biased2 += p_biased2
         unbiased2 += p_unbiased2
-        if p_biased1 > max_bias or p_biased2 > max_bias:
+        if p_biased2 > max_bias:
             max_bias_content = paragraph
 
     results = {
