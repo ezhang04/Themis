@@ -1,25 +1,26 @@
-
 {
-  "name": "Hello World",
+  "name": "Themis",
   "description": "Base Level Extension",
   "version": "1.0",
   "manifest_version": 3,
 
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "default_popup": "hello.html",
-      "js": ["content.js"],
-      "run_at": "document_idle"
-    }
-  ],
+  "icons": {
+    "16": "smiley.png",
+    "32": "smiley.png",
+    "48": "smiley.png",
+    "128": "smiley.png"
+  },
 
   "action": {
-    "default_popup": "smiley.png",
-    "default_icon": {
-      "1000": "smiley.png"
-    }
+    "default_icon": "smiley.png",
+    "default_popup": "hello.html",
+    "matches": ["<all_urls>"],
+    "js": ["content.js"],
+    "run_at": "document_idle"
+  },
+
+
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
   }
 }
-
-  
