@@ -7,6 +7,14 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+@app.route("/themis")
+def themis():
+    return render_template("themis.html")
+
 @app.route("/analyze", methods=["POST"])
 def analyze():
     data = request.get_json()

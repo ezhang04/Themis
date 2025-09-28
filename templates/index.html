@@ -3,16 +3,25 @@
 
 <head>
   <title>Themis Bias Detector</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
 </head>
 
 <body>
+  <nav>
+    <ul class="navbar">
+      <li><a href="{{ url_for('index') }}">Home</a></li>
+      <li><a href="{{ url_for('about') }}">About</a></li>
+      <li><a href="{{ url_for('themis') }}">Who is Themis</a></li>
+    </ul>
+  </nav>
+  
   <div class="container">
     <h2>Themis Bias Detector</h2>
     <input type="text" id="url" placeholder="Enter article URL">
     <button onclick="analyze()">Analyze</button>
     <pre id="output"></pre>
+    <p id="prediction"></p>
   </div>
 
   <script>
@@ -24,7 +33,21 @@
         body: JSON.stringify({ url })
       });
       const data = await response.json();
-      document.getElementById("output").innerText = JSON.stringify(data, null, 2);
+      const resultsDiv = document.getElementById("output");
+      resultsDiv.innerHTML = "";
+      //document.getElementById("output").innerText = JSON.stringify(data, null, 2);
+      for (const [key, value] of Object.entries(data)) {
+            const p = document.createElement("p");
+            p.innerHTML = `<strong>${key}:</strong> ${value}`;
+            resultsDiv.appendChild(p);
+        }
+        const predictionEl = document.getElementById("prediction");
+        if ("Weighted Bias Score" in data) {
+            const score = data["Weighted Bias Score"];
+            predictionEl.textContent = score > 0.8 ? "Biased" : score > 0.5 ? "Somewhat Biased" : "Unbiased";
+        } else {
+            predictionEl.textContent = "No score available";
+        }
     }
   </script>
 </body>
