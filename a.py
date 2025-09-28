@@ -19,6 +19,7 @@ class Model:
         self.model.load_state_dict(state_dict)
 
         self.tokenizer = BertTokenizer.from_pretrained(MODEL_NAME)
+        
     def predict(self, text):
         encoding = self.tokenizer(
             text,

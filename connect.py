@@ -1,4 +1,5 @@
 from a import Model
+from a2 import Model2
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urlparse
@@ -31,22 +32,44 @@ def predict_from_url(url):
     parsed = urlparse(url)
     domain = parsed.netloc
     model = Model()
+    model2 = Model2()
     if domain in mapping:
-        print(domain,mapping[domain][0],mapping[domain][1])
+        n = 1
         headline, content = fetch_article(
             url,
             mapping[domain][0],
             mapping[domain][1]
         )
-        print("Headline:", headline)
-        print("Content:", content[0])
-        # gets bias & unbiased score from headline
         biased, unbiased = model.predict(headline)
-        print(f"Headline Bias Scores - Biased: {biased}, Unbiased: {unbiased}")
+        biased2, unbiased2 = model2.predict(headline)
         for paragraph in content:
+            n += 1
             p_biased, p_unbiased = model.predict(paragraph)
-            print(f"Content Bias Scores - Biased: {p_biased}, Unbiased: {p_unbiased}")
+            biased += p_biased
+            unbiased += p_unbiased
+
+            p_biased2, p_unbiased2 = model2.predict(paragraph)
+            biased2 += p_biased2
+            unbiased2 += p_unbiased2
+        biased /= n
+        unbiased /= n
+
+        biased2 /= n
+        unbiased2 /= n
+
+
+        print(f"Overall Model 1 Bias Scores - Biased: {biased}, Unbiased: {unbiased}")
+        print(f"Overall Model 2 Bias Scores - Biased: {biased2}, Unbiased: {unbiased2}")
+        print(f"Overall Bias Scores - Avg Bias: {(biased2 + biased) / 2}, Avg Unbiased: {(unbiased2 + unbiased) / 2}")
+        print(f"Overall Bias Scores - Wegihted Bias: {biased2 * .8 + biased * .2}, Avg Unbiased: {unbiased2 *.8 + unbiased *.2}")
+        print("-----------------------------------------------------")
+
     else:
         raise ValueError(f"Domain {domain} not supported.")
 
 predict_from_url("https://www.usatoday.com/story/news/politics/2025/09/27/trump-troops-portland-ice/86390814007/")
+predict_from_url("https://www.foxnews.com/politics/obama-center-deposits-just-1m-into-470m-reserve-fund-aimed-to-protect-taxpayers-fueling-new-criticism")
+predict_from_url("https://www.msnbc.com/news/news-analysis/democrats-shutdown-trump-rescissions-spending-rcna233554")
+predict_from_url("https://www.alternet.org/trump-james-comey-halligan/")
+predict_from_url("https://www.breitbart.com/politics/2025/09/27/newsom-attacks-stephen-miller-calls-him-a-fascist/")
+predict_from_url("https://www.huffpost.com/entry/united-states-revokes-visa-for-colombias-president-after-he-urges-american-soldiers-to-disobey-trump_n_68d7e7e4e4b085d511c6e2d9?origin=home-latest-news-unit")
