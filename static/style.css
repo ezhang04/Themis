@@ -161,20 +161,27 @@ button:hover {
 
 ul {
   list-style-type: none;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
+  display: inline-block;
 }
 
-/* Reset list styling */
+/* Navbar styling */
 .navbar {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  position: fixed;
   top: 0;
-  width: 100%;
+  left: 50%; /* move navbar center */
+  transform: translateX(-50%); /* adjust centering */
   background-color: #333;
+  display: flex;
+  justify-content: center; /* distribute items evenly */
+  align-items: center;
+  border-radius: 10px; /* optional for rounded bar */
 }
+
 
 /* Each list item horizontally aligned */
 .navbar li {
