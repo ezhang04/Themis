@@ -24,7 +24,8 @@ Named after **Themis**, the Greek goddess of justice, fairness, and balance, thi
 
 ## 📂 How To Run
 1. git clone entire repo
-2. in bash terminal: ```source venv/bin/activate```
-3. in bash terminal: ```pip install -r requirements.txt```
-4. in bash terminal: ```python app.py```
-5. in your internet explorer go to http://127.0.0.1:5000
+2. Download .pth file from https://drive.google.com/file/d/1yhWb03_W1m_kJqnT0wfwLFT5_pkYD7HY/view?usp=sharing and put it in your folder
+3. in bash terminal: ```source venv/bin/activate```
+4. in bash terminal: ```pip install -r requirements.txt```
+5. in bash terminal: ```python app.py```
+6. in your internet explorer go to http://127.0.0.1:5000
